@@ -1,14 +1,14 @@
-package com.jmenya.lil.sbet.bootingweb.data;
+package com.jmenya.repositories.data;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
-@Table(name = "ROOM")
+@Table
 public class Room {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ROOM_ID")
-    private long id;
+    private long roomId;
     @Column(name = "NAME")
     private String name;
     @Column(name = "ROOM_NUMBER")
@@ -16,12 +16,12 @@ public class Room {
     @Column(name = "BED_INFO")
     private String bedInfo;
 
-    public long getId() {
-        return id;
+    public long getRoomId() {
+        return roomId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setRoomId(long roomId) {
+        this.roomId = roomId;
     }
 
     public String getName() {
@@ -51,11 +51,10 @@ public class Room {
     @Override
     public String toString() {
         return "Room{" +
-                "id=" + id +
+                "roomId=" + roomId +
                 ", name='" + name + '\'' +
-                ", roomNumber=" + roomNumber +
+                ", roomNumber='" + roomNumber + '\'' +
                 ", bedInfo='" + bedInfo + '\'' +
                 '}';
     }
-
 }
